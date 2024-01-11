@@ -13,15 +13,6 @@ const  DragAndDrop = (props) => {
 
 	useEffect( () => {
 		const onMouseMove = (event) => {
-
-
-			
-
-
-
-
-
-
 			setXTranslate(xTranslate + event.clientX - initialMousePosition.x)
 			setYTranslate(yTranslate + event.clientY - initialMousePosition.y)
 		}
@@ -32,7 +23,9 @@ const  DragAndDrop = (props) => {
 	},[isDragging,initialMousePosition])
 
 	useEffect(() => {
-		const onMouseUp = () => setIsDragging(false);
+		const onMouseUp = () => {
+			setIsDragging(false);
+		}
 		window.addEventListener('mouseup',onMouseUp)
 		return () => window.removeEventListener('mouseup', onMouseUp)
 	},[])
@@ -42,9 +35,10 @@ const  DragAndDrop = (props) => {
 	},[xTranslate,yTranslate])
 
 	useEffect(() => {
-		// setXTranslate(props.xPosition)
-		// setYTranslate(props.yPosition)
-		// props.setNotePosition(xTranslate,yTranslate,props.id)
+
+		setXTranslate(props.xPosition)
+		setYTranslate(props.yPosition)
+		props.setNotePosition(xTranslate,yTranslate,props.id)
 	},[])
 
 	return (

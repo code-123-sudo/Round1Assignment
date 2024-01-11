@@ -9,8 +9,8 @@ const DragDropBoard = () => {
 
   const addNote = () => {
       let newId = Math.random().toString(36).substring(7);
-      setNotesList([ {id: newId, isPinned : false, xPosition : 0, yPosition: 0} , ...notesList])
-      console.log(notesList)
+      let x =  [{id: newId, isPinned : false, xPosition : 0, yPosition: 0} , ...notesList]
+      setNotesList(x)
   }
 
   const setNotePosition = (x,y,id) => {
@@ -27,7 +27,9 @@ const DragDropBoard = () => {
       }
       return noteObject
     })
+    console.log("notes list")
     setNotesList(notesListNew)
+    console.log(notesList)
   }
 
   const deleteNote = (id) => {
@@ -36,6 +38,7 @@ const DragDropBoard = () => {
       return true;
     })
     setNotesList(notesListNew)
+    console.log("notesListdek",notesList)
   }
 
   return (

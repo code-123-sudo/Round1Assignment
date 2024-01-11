@@ -10,12 +10,17 @@ const Note = ({id , deleteNote}) => {
     setContent(e.target.value);
   }
 
+  const editNote = () => {
+    
+  }
+
   return (
     <div className="box">
       <div className="deleteButton" onClick={() => {deleteNote(id)}}><div>x</div></div>
       <div className="inputBox">
         <textarea type="text" value={id} onChange = {(e) => {handleChange(e)}} />
       </div>
+      <div className="editButton" onClick={() => {editNote(id)}}><div>EDIT</div></div>
     </div>
   )
 }
