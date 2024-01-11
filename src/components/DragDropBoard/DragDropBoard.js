@@ -9,7 +9,7 @@ const DragDropBoard = () => {
 
   const addNote = () => {
       let newId = Math.random().toString(36).substring(7);
-      let x =  [{id: newId, isPinned : false, xPosition : 0, yPosition: 0} , ...notesList]
+      let x =  [...notesList,{id: newId, isPinned : false, xPosition : 0, yPosition: 0}]
       setNotesList(x)
   }
 
@@ -27,9 +27,24 @@ const DragDropBoard = () => {
       }
       return noteObject
     })
-    console.log("notes list")
     setNotesList(notesListNew)
-    console.log(notesList)
+  }
+
+  const pinUnpinNote = (id) => {
+    let notesListNew = notesList.map((note) => {
+      let noteObject = {
+        id: note.id,
+        isPinned : note.isPinned,
+        xPosition : note.xPosition,
+        yPosition : note.yPosition
+      }
+      if ( note.id == id ) {
+        noteObject.isPinned = !noteObject.isPinned
+      }
+      return noteObject
+    })
+    setNotesList(notesListNew)
+    console.log(notesListNew)
   }
 
   const deleteNote = (id) => {
@@ -45,8 +60,8 @@ const DragDropBoard = () => {
     <div className="board">
       {notesList.map((note) => {
         return (
-          <DragAndDrop xPosition={note.xPosition} yPosition={note.yPosition} setNotePosition={setNotePosition} id={note.id}>
-            <Note id={note.id} deleteNote={deleteNote}/>
+          <DragAndDrop xPosition={note.xPosition} yPosition={note.yPosition} setNotePosition={setNotePosition} id={note.id} isPinned={note.isPinned} notesList={notesList}>
+            <Note pin={note.isPinned} id={note.id} deleteNote={deleteNote} pinUnpinNote={pinUnpinNote}/>
           </DragAndDrop>
         )
       })}

@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import './Note.css';
 
-const Note = ({id , deleteNote}) => {
+const Note = ({id , deleteNote, pinUnpinNote, pin}) => {
 
   const [content,setContent] = useState("")
 
@@ -11,14 +11,15 @@ const Note = ({id , deleteNote}) => {
   }
 
   const editNote = () => {
-    
+
   }
 
   return (
     <div className="box">
       <div className="deleteButton" onClick={() => {deleteNote(id)}}><div>x</div></div>
+      <div className="pinButton" onClick={() => {pinUnpinNote(id)}}><div>{ pin ? "UNPIN" : "PIN"}</div></div>
       <div className="inputBox">
-        <textarea type="text" value={id} onChange = {(e) => {handleChange(e)}} />
+        <textarea type="text" value={content} onChange = {(e) => {handleChange(e)}} />
       </div>
       <div className="editButton" onClick={() => {editNote(id)}}><div>EDIT</div></div>
     </div>
