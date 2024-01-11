@@ -44,7 +44,6 @@ const DragDropBoard = () => {
       return noteObject
     })
     setNotesList(notesListNew)
-    console.log(notesListNew)
   }
 
   const deleteNote = (id) => {
@@ -53,7 +52,6 @@ const DragDropBoard = () => {
       return true;
     })
     setNotesList(notesListNew)
-    console.log("notesListdek",notesList)
   }
 
   return (
