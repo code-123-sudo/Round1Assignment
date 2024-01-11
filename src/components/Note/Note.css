@@ -1,7 +1,7 @@
 .box{
   height: 300px;
   width: 200px;
-  background-color: #FFBF00;
+  background-color: #FFEA00;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -11,7 +11,7 @@ textarea{
   height: 210px;
   width: 180px;
   margin-top:42px;
-  background-color: #FFBF00;
+  background-color: #FFEA00;
   border: none;
   outline: none;
   font-size: 25px;
@@ -41,7 +41,7 @@ textarea{
   bottom: 10px;
   position: absolute;
   height: 23px;
-  width: 23px;
+  width: 43px;
   border: 2px solid #d3d3d3;
   background-color: white;
   display: flex;
@@ -59,7 +59,7 @@ textarea{
   top: 10px;
   position: absolute;
   height: 23px;
-  width: 23px;
+  width: 63px;
   border: 2px solid #d3d3d3;
   background-color: white;
   display: flex;
