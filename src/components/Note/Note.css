@@ -4,14 +4,13 @@
   background-color: #FFBF00;
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   position: absolute;
 }
-
 textarea{
-  height: 280px;
+  height: 210px;
   width: 180px;
+  margin-top:42px;
   background-color: #FFBF00;
   border: none;
   outline: none;
