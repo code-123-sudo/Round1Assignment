@@ -3,8 +3,6 @@ import { useState, useEffect } from 'react';
 
 const  DragAndDrop = (props) => {
 	const [isDragging,setIsDragging] = useState(false);
-	const [xTranslate,setXTranslate] = useState(0);
-	const [yTranslate,setYTranslate] = useState(0);
 	const [initialMousePosition, setInitialMousePosition] = useState({});
 
 	const onMouseDown = ({ clientX, clientY }) => {
