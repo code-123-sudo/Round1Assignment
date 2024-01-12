@@ -9,7 +9,7 @@ const DragDropBoard = () => {
 
   const addNote = () => {
       let newId = Math.random().toString(36).substring(7);
-      let x =  [...notesList,{id: newId, isPinned : false, content: "",xPosition : 0, yPosition: 0}]
+      let x =  [{id: newId, isPinned : false, content: "",xPosition : 0, yPosition: 0},...notesList]
       setNotesList(x)
   }
 

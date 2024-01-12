@@ -17,8 +17,8 @@ const  DragAndDrop = (props) => {
 			if ( !props.isPinned ){
 				let check = true;
 
-				let x1 = xTranslate + event.clientX - initialMousePosition.x;
-				let y1 = yTranslate + event.clientY - initialMousePosition.y;
+				let x1 = props.xPosition + event.clientX - initialMousePosition.x;
+				let y1 = props.yPosition + event.clientY - initialMousePosition.y;
 
 				for ( let i = 0; i < props.notesList.length; i++ ) {
 					if ( props.notesList[i].isPinned ) {
@@ -38,8 +38,7 @@ const  DragAndDrop = (props) => {
 				}
 
 				if ( check ) {
-					setXTranslate(xTranslate + event.clientX - initialMousePosition.x)
-					setYTranslate(yTranslate + event.clientY - initialMousePosition.y)
+					props.setNotePosition(x1,y1,props.id)
 				}
 
 			}
@@ -57,14 +56,6 @@ const  DragAndDrop = (props) => {
 		window.addEventListener('mouseup',onMouseUp)
 		return () => window.removeEventListener('mouseup', onMouseUp)
 	},[])
-
-	useEffect(() => {
-		props.setNotePosition(xTranslate,yTranslate,props.id)
-	},[xTranslate,yTranslate])
-
-	useEffect(() => {
-		props.setNotePosition(xTranslate,yTranslate,props.id)
-	},[xTranslate,yTranslate])
 
 	return (
 		<div 
