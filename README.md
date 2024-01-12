@@ -26,7 +26,7 @@
 ```sh
     npm start
 ```
-5. Move to https://localhost:3000 on your browser and enjoy the project
+5. Move to http://localhost:3000 on your browser and enjoy the project
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
