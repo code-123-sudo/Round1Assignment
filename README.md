@@ -40,7 +40,7 @@
 3. Users are able to delete notes by clicking on the
    "x" button.
 4. Users are able to edit notes directly by clicking
-   on the text. The cursor should start from the beginning
+   on the text. The cursor starts from the beginning
    of the note when the “edit” button is clicked.
 5. Users are able to pin notes by clicking on "PIN" button, which will make
    them non-draggable and prevent other notes from
