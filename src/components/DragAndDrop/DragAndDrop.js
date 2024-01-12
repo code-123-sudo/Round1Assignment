@@ -24,14 +24,13 @@ const  DragAndDrop = (props) => {
 					if ( props.notesList[i].isPinned ) {
 						let x2 = props.notesList[i].xPosition;
 						let y2 = props.notesList[i].yPosition;
-						if (
+						if  (!(
 								( x1 + 200 < x2 || x1 > x2 + 200 )
 									||
 								(y1 + 300 < y2 || y1 > y2 + 300 )
 							)
+							)
 						{
-							check = true;
-						}else {
 							check = false;
 						}
 						
