@@ -17,7 +17,7 @@ const  DragAndDrop = (props) => {
 
 				let x1 = props.xPosition + event.clientX - initialMousePosition.x;
 				let y1 = props.yPosition + event.clientY - initialMousePosition.y;
-
+				if ( x1 > 800 || y1 > 400 ) check = false;
 				for ( let i = 0; i < props.notesList.length; i++ ) {
 					if ( props.notesList[i].isPinned ) {
 						let x2 = props.notesList[i].xPosition;
@@ -31,7 +31,6 @@ const  DragAndDrop = (props) => {
 						{
 							check = false;
 						}
-						
 					}
 				}
 
